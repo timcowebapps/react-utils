@@ -1,0 +1,28 @@
+{
+	"name": "timcowebapps-react-utils",
+	"version": "0.1.1-rc.2",
+	"description": "",
+	"author": "Victor Timoshin <victor-timoshin@hotmail.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/timcowebapps/react-utils.git"
+	},
+	"keywords": [
+		"typescript",
+		"react",
+		"utilities",
+		"classes"
+	],
+	"main": "./index.js",
+	"typings": "./lib/index.d.ts",
+	"scripts": {
+		"clean": "rm -f lib/classes/*.js && rm -f lib/classes/*.js.map && rm -f lib/classes/*.d.ts && rm -f lib/schemas/*.js && rm -f lib/schemas/*.js.map && rm -f lib/schemas/*.d.ts",
+		"prepublish": "npm run build",
+		"build": "npm run clean && tsc",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"lodash": "^4.17.4"
+	}
+}
