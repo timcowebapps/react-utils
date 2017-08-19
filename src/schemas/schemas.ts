@@ -5,7 +5,8 @@ export interface IJsonSchemaMap {
 }
 
 export interface IJsonSchema {
-	id?: string;
-	properties?: IJsonSchemaMap;
-	items?: IJsonSchema | IJsonSchema[];
+	id?: string; // Уникальный идентификатор
+	default?: any; // Значения по умолчанию
+	properties?: IJsonSchemaMap; // Свойства
+	items?: IJsonSchema | IJsonSchema[]; // Вложенные элементы
 }
