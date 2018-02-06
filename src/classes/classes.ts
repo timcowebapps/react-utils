@@ -36,7 +36,7 @@ export namespace Classes {
 		const { element, modifiers } = props;
 		const { prefix, delimiters } = _.merge({}, defaults, options);
 
-		var blockName = prefix + "-" + block;
+		var blockName = prefix + block;
 		var rootName = element ? `${blockName}${delimiters.element}${element}` : blockName;
 
 		var className = [styles[rootName]].concat(modifiers.map((modifier: string) => {
