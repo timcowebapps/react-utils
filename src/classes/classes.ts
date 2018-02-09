@@ -27,7 +27,7 @@ export namespace Classes {
 		return classNames.join(' ').trim();
 	}
 
-	export function bem(styles: any, block: string, props: any, options: any = {}): string {
+	export function bem(pipeline: any, block: string, props: any, options: any = {}): string {
 		const defaults = {
 			prefix: '',
 			delimiters: { element: '__', modifier: '--' }
@@ -39,10 +39,15 @@ export namespace Classes {
 		var blockName = prefix + block;
 		var rootName = element ? `${blockName}${delimiters.element}${element}` : blockName;
 
-		var className = [styles[rootName]].concat(modifiers.map((modifier: string) => {
-			return styles[`${rootName}${delimiters.modifier}${modifier}`];
-		})).join(' ').trim();
+		var classNames = "";
+		if (modifiers.length > 0) {
+			classNames = [pipeline[rootName]].concat(modifiers.map((modifier: string) => {
+				return pipeline[`${rootName}${delimiters.modifier}${modifier}`];
+			})).join(' ').trim();
+		} else {
+			classNames = pipeline[rootName];
+		}
 
-		return className;
+		return classNames;
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"name": "timcowebapps-react-utils",
-	"version": "0.1.3-rc.0",
+	"version": "0.1.3-rc.1",
 	"description": "Набор утилит",
 	"author": "Victor Timoshin <victor-timoshin@hotmail.com>",
 	"license": "MIT",
@@ -23,7 +23,8 @@
 		"clean-classes": "rm -f lib/classes/*.js && rm -f lib/classes/*.js.map && rm -f lib/classes/*.d.ts",
 		"clean-schemas": "rm -f lib/schemas/*.js && rm -f lib/schemas/*.js.map && rm -f lib/schemas/*.d.ts",
 		"clean-enumerable": "rm -f lib/enumerable/*.js && rm -f lib/enumerable/*.js.map && rm -f lib/enumerable/*.d.ts",
-		"clean": "npm run clean-classes && npm run clean-schemas && npm run clean-enumerable",
+		"clean-shared": "rm -f lib/shared/*.js && rm -f lib/shared/*.js.map && rm -f lib/shared/*.d.ts",
+		"clean": "npm run clean-shared && npm run clean-classes && npm run clean-schemas && npm run clean-enumerable",
 		"build": "npm run clean && tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
