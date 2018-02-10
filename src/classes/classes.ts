@@ -30,17 +30,17 @@ export namespace Classes {
 	export function bem(pipeline: any, block: string, props: any, options: any = {}): string {
 		const defaults = {
 			prefix: '',
-			delimiters: { element: '__', modifier: '--' }
+			delimiters: { prefix: '-', element: '__', modifier: '--' }
 		};
 
 		const { element, modifiers } = props;
 		const { prefix, delimiters } = _.merge({}, defaults, options);
 
-		var blockName = prefix + block;
+		var blockName = prefix ? `${prefix}${delimiters.prefix}${block}` : block;
 		var rootName = element ? `${blockName}${delimiters.element}${element}` : blockName;
 
 		var classNames = "";
-		if (modifiers.length > 0) {
+		if (modifiers !== null && modifiers !== undefined && modifiers.length > 0) {
 			classNames = [pipeline[rootName]].concat(modifiers.map((modifier: string) => {
 				return pipeline[`${rootName}${delimiters.modifier}${modifier}`];
 			})).join(' ').trim();
