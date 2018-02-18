@@ -1,7 +1,7 @@
 'use strict';
 
-export namespace IMicrodata {
-	export interface ImageObject {
+export namespace Microdata {
+	export interface IImageObject {
 		name: string;
 		author: string;
 		contentLocation: string;
