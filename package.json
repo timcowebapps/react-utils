@@ -1,6 +1,6 @@
 {
 	"name": "timcowebapps-react-utils",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Набор утилит",
 	"author": "Victor Timoshin <victor-timoshin@hotmail.com>",
 	"license": "MIT",
@@ -22,9 +22,10 @@
 		"prepublish": "npm run build",
 		"clean-classes": "rm -f lib/classes/*.js && rm -f lib/classes/*.js.map && rm -f lib/classes/*.d.ts",
 		"clean-schemas": "rm -f lib/schemas/*.js && rm -f lib/schemas/*.js.map && rm -f lib/schemas/*.d.ts",
+		"clean-microdata": "rm -f lib/microdata/*.js && rm -f lib/microdata/*.js.map && rm -f lib/microdata/*.d.ts",
 		"clean-enumerable": "rm -f lib/enumerable/*.js && rm -f lib/enumerable/*.js.map && rm -f lib/enumerable/*.d.ts",
 		"clean-shared": "rm -f lib/shared/*.js && rm -f lib/shared/*.js.map && rm -f lib/shared/*.d.ts",
-		"clean": "npm run clean-shared && npm run clean-classes && npm run clean-schemas && npm run clean-enumerable",
+		"clean": "npm run clean-shared && npm run clean-classes && npm run clean-schemas && npm run clean-microdata && npm run clean-enumerable",
 		"build": "npm run clean && tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -32,6 +33,6 @@
 		"lodash": "^4.17.5"
 	},
 	"devDependencies": {
-		"@types/lodash": "^4.14.101"
+		"@types/lodash": "^4.14.104"
 	}
 }
